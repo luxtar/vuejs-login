@@ -3,6 +3,7 @@ import App from './App.vue';
 import { router } from './router';
 import store from './store';
 import BootstrapVue from 'bootstrap-vue'
+import Fabric from 'fabric'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.min.css';
 import VeeValidate from 'vee-validate';
@@ -21,6 +22,7 @@ library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt)
 Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue)
+Vue.use(Fabric)
 Vue.use(VeeValidate)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
