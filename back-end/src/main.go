@@ -1,16 +1,15 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
+	"time"
 
+	"github.com/dgrijalva/jwt-go"
 	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/dgrijalva/jwt-go"
-
-	"fmt"
-	"time"
 )
 
 type MongoClient struct {
@@ -19,10 +18,9 @@ type MongoClient struct {
 }
 
 type UserInfo struct {
-	UserName    string `bson:"username"`
+	UserName string `bson:"username"`
 	Password string `bson:"password"`
 }
-
 
 func main() {
 
@@ -57,7 +55,7 @@ func main() {
 	user.GET("/userContent", mongoClient.userContent)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":3000"))
 }
 
 // Return a pointer to the MongoClient
